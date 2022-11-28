@@ -25,5 +25,15 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/kuber:latest
-        
+      - name: Push manifest to deployments repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          source-directory: 'manifest'
+          destination-github-username: 'ekke020'
+          destination-repository-name: 'deployments'
+          user-email: ekman-johan020@hotmail.com
+          target-branch: main          
+
     
