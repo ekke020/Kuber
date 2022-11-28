@@ -30,10 +30,10 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'raw-configs/kuber'
+          source-directory: manifest
           destination-github-username: 'ekke020'
           destination-repository-name: 'deployments'
           user-email: ekman-johan020@hotmail.com
           target-branch: main          
-          target-directory: deployment
+          target-directory: raw-configs/kuber
     
