@@ -26,14 +26,15 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/kuber:latest
       - name: Push manifest to deployments repo
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'manifest'
-          destination-github-username: 'ekke020'
-          destination-repository-name: 'deployments'
-          user-email: ekman-johan020@hotmail.com
-          target-branch: main          
-          target-directory: raw-configs/kuber
+          source_file: 'manifest/kuber-deployment.yaml'
+          destination_repo: 'ekke020/deployments'
+          user-email: action@github.com
+          user_name: 'pipeline'
+          commit_message: 'Updated kuber-deployment manifest'
+          destination_branch: main          
+          destination_folder: 'raw-configs/kuber'
     
