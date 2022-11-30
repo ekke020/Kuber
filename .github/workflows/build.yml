@@ -30,7 +30,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'manifest/kuber-deployment.yaml'
+          source_file: 'manifest/'
           destination_repo: 'ekke020/deployments'
           user-email: action@github.com
           user_name: 'pipeline'
