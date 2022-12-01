@@ -5,16 +5,20 @@ metadata:
   name: kuber-deployment
   labels:
     app: kuber
-
+    run: app
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: kuber
+      run: app
+      version: "1.0"
   template:
     metadata:
       labels:
         app: kuber
+        run: app
+        version: "1.0"
     spec:
       containers:
         - name: kuber

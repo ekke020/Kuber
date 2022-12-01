@@ -37,4 +37,11 @@ jobs:
           commit_message: 'Updated kuber-deployment manifest'
           destination_branch: main          
           destination_folder: 'raw-configs/kuber'
-    
+
+  stabilize:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: stabilize
+    steps: 
+      - name: Waiting
+        run: echo 'done waiting!'
