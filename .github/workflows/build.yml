@@ -34,7 +34,9 @@ jobs:
           destination_repo: 'ekke020/deployments'
           user-email: action@github.com
           user_name: 'pipeline'
-          commit_message: 'Updated kuber-deployment manifest'
+          commit_message: "Deploying new version of Kuber\n\
+            \nrunid:${{ github.run_id }}\nrepo:${{ github.event.repository.name }}\n\
+            envid:743920904"
           destination_branch: main          
           destination_folder: 'raw-configs/kuber'
 
