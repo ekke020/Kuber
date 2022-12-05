@@ -3,9 +3,9 @@ kind: Service
 
 metadata:
   labels:
-    service: kuber-service
-    app: kuber-service
-  name: kuber-service
+    service: kuber-service-blue
+    app: kuber-service-blue
+  name: kuber-service-blue
   namespace: default
 
 spec:
