@@ -24,7 +24,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/kuber:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/kuber:1.4
       - name: Push manifest to deployments repo
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
